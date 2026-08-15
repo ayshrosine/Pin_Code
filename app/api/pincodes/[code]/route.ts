@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { getCachedPincode, saveToCache } from "@/lib/db";
 import { fetchPincodeFromIndiaPost } from "@/lib/postalApi";
 
+export const dynamic = "force-dynamic";
+
 const requestCounts = new Map<string, { count: number; expires: number }>();
 const RATE_LIMIT_MAX = 60;
 const WINDOW_MS = 60 * 1000;

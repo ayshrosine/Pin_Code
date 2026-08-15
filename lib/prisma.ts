@@ -1,20 +1,23 @@
 import { PrismaClient } from "@prisma/client";
 
-const globalForPrisma = global as unknown as { prisma: any };
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | null | undefined;
+};
 
-function getPrismaClient() {
-  if (globalForPrisma.prisma) return globalForPrisma.prisma;
-
+function createPrismaClient(): PrismaClient | null {
   try {
-    const client = new PrismaClient();
-    if (process.env.NODE_ENV !== "production") {
-      globalForPrisma.prisma = client;
-    }
-    return client;
+    return new PrismaClient();
   } catch {
-    // Silent fallback when database driver adapter is not connected
     return null;
   }
 }
 
-export const prisma = getPrismaClient() as PrismaClient;
+export const prisma =
+  globalForPrisma.prisma !== undefined
+    ? (globalForPrisma.prisma as PrismaClient)
+    : (createPrismaClient() as PrismaClient);
+
+if (process.env.NODE_ENV !== "production") {
+  globalForPrisma.prisma = prisma;
+}
+
