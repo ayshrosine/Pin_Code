@@ -2,7 +2,7 @@
 
 > A full-stack, responsive web application built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, and **MongoDB with Prisma ORM**. Powered by **India Post's official live public API** (`api.postalpincode.in`) paired with a **cache-first database strategy**.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://bangalore-pincode-explorer.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://pin-code-sandy.vercel.app/)
 [![Tech Stack](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![Live API](https://img.shields.io/badge/API-India%20Post%20Live-FF9933?style=for-the-badge)](https://api.postalpincode.in)
 [![Database Cache](https://img.shields.io/badge/Database-MongoDB%20%2B%20Prisma-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
@@ -12,7 +12,7 @@
 
 ## 🌐 Live Demo & Preview
 
-- **Production Deployment**: [https://bangalore-pincode-explorer.vercel.app](https://bangalore-pincode-explorer.vercel.app)
+- **Production Deployment**: [https://pin-code-sandy.vercel.app/](https://pin-code-sandy.vercel.app/)
 - **Local Development**: `http://localhost:3000`
 
 ---
@@ -91,8 +91,8 @@ The application uses a **Cache-First, API-Fallback** architecture:
 
 ### 1. Clone Repository & Install Dependencies
 ```bash
-git clone https://github.com/your-username/bangalore-pincode-explorer.git
-cd bangalore-pincode-explorer
+git clone https://github.com/ayshrosine/Pin_Code.git
+cd Pin_Code
 npm install
 ```
 
