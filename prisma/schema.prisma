@@ -1,0 +1,19 @@
+datasource db {
+  provider = "mongodb"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model PincodeCache {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  pincode   String
+  areaName  String
+  district  String   @default("Bengaluru Urban")
+  state     String   @default("Karnataka")
+  fetchedAt DateTime @default(now())
+
+  @@index([pincode])
+  @@index([areaName])
+}
